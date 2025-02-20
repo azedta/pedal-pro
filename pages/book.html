@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="/assets//favicon/favicon.ico" />
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap and Stylesheets -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/dropdowns.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+
+    <title>Book Now - Pedal Pro</title>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container">
+          <a href="/index.html" class="navbar-brand">
+            <img
+              src="/assets/logos/full-logo.png"
+              alt=""
+              width="225"
+              class="nav-logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-dark navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse flex-grow-0"
+            id="navbarNavAltMarkup"
+          >
+            <div class="navbar-nav">
+              <a
+                href="/pages/services.html"
+                class="nav-item nav-item--underline nav-link me-4"
+                >Services</a
+              >
+              <a
+                href="/pages/faqs.html"
+                class="nav-item nav-item--underline nav-link me-4"
+                >About</a
+              >
+              <a
+                href="/pages/contact.html"
+                class="nav-item nav-item--underline nav-link"
+                >Contact</a
+              >
+            </div>
+            <a href="#" class="btn-nav-cta ms-5 px-4 py-3 rounded-0"
+              >BOOK NOW
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mt-5 mb-2 py-3">
+      <div class="pt-5 pb-2" style="margin-bottom: 10rem">
+        <h1 class="col align-self-center text-center mb-3 heading-primary">
+          OUR EXPERTS
+        </h1>
+        <p class="mb-0 heading-tertiary text-center" style="font-size: 1.5rem">
+          SELECT AN EXPERT TO BOOK
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row text-center">
+          <!-- Team item -->
+          <div class="col-md-6 col-sm-12">
+            <div
+              class="bg-white shadow-sm py-5 px-4 mx-5"
+              style="position: relative; margin-bottom: 8rem"
+            >
+              <img
+                src="/assets/experts/expert-1.jpg"
+                alt=""
+                width="120"
+                class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                style="
+                  position: absolute;
+                  top: -28%;
+                  right: 50%;
+                  transform: translateX(50%);
+                "
+              />
+              <h5 class="mb-4 heading-tertiary" style="padding-top: 1rem">
+                ETHAN CARTER
+              </h5>
+
+              <div
+                class="d-flex gap-4 mb-4 justify-content-center align-items-center"
+              >
+                <a
+                  class="btn btn-outline-dark rounded-5"
+                  style="font-family: Raleway, sans-serif; font-size: 0.8rem"
+                >
+                  WHEELS
+                </a>
+                <a
+                  class="btn btn-outline-dark rounded-5"
+                  style="font-family: Raleway, sans-serif; font-size: 0.8rem"
+                >
+                  PEDALS & BRAKES
+                </a>
+              </div>
+              <div
+                class="d-flex justify-content-center gap-2 align-items-center"
+              >
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="currentColor"
+                    class="bi bi-instagram"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="/pages/book-service.html"
+                  class="btn btn-dark mt-2 btn-style px-4 py-2 rounded-0 ethan-book-btn"
+                  style="font-family: Raleway, sans-serif"
+                >
+                  BOOK NOW
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Team item -->
+          <div class="col-md-6 col-sm-12" style="margin-bottom: 8rem">
+            <div
+              class="bg-white shadow-sm py-5 px-4 mx-5"
+              style="position: relative"
+            >
+              <img
+                src="/assets/experts/expert-2.jpg"
+                alt=""
+                width="120"
+                class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                style="
+                  position: absolute;
+                  top: -28%;
+                  right: 50%;
+                  transform: translateX(50%);
+                "
+              />
+              <h5 class="mb-4 heading-tertiary" style="padding-top: 1rem">
+                LIAM FOSTER
+              </h5>
+
+              <div
+                class="d-flex gap-4 mb-4 justify-content-center align-items-center"
+              >
+                <a
+                  class="btn btn-outline-dark rounded-5"
+                  style="font-family: Raleway, sans-serif; font-size: 0.8rem"
+                >
+                  WHEELS
+                </a>
+                <a
+                  class="btn btn-outline-dark rounded-5"
+                  style="font-family: Raleway, sans-serif; font-size: 0.8rem"
+                >
+                  CASETTE
+                </a>
+                <a
+                  class="btn btn-outline-dark rounded-5"
+                  style="font-family: Raleway, sans-serif; font-size: 0.8rem"
+                >
+                  FRAME
+                </a>
+              </div>
+              <div
+                class="d-flex justify-content-center gap-2 align-items-center"
+              >
+                <a href="https://www.instagram.com" target="_blank" class="btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="currentColor"
+                    class="bi bi-instagram"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="/pages/book-service.html"
+                  class="btn btn-dark px-4 py-2 mt-2 btn-style rounded-0 liam-book-btn"
+                  style="font-family: Raleway, sans-serif"
+                >
+                  BOOK NOW
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Team item -->
+          <div class="col-md-6 col-sm-12" style="margin-bottom: 8rem">
+            <div
+              class="bg-white shadow-sm py-5 px-4 mx-5"
+              style="position: relative"
+            >
+              <img
+                src="/assets/experts/expert-3.jpg"
+                alt=""
+                width="120"
+                class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                style="
+                  position: absolute;
+                  top: -28%;
+                  right: 50%;
+                  transform: translateX(50%);
+                "
+              />
+              <h5 class="mb-4 heading-tertiary" style="padding-top: 1rem">
+                MAXWEL REED
+              </h5>
+
+              <div
+                class="d-flex gap-4 mb-4 justify-content-center align-items-center"
+              >
+                <a
+                  class="btn btn-outline-dark rounded-5"
+                  style="font-family: Raleway, sans-serif; font-size: 0.8rem"
+                >
+                  WHEELS
+                </a>
+                <a
+                  class="btn btn-outline-dark rounded-5"
+                  style="font-family: Raleway, sans-serif; font-size: 0.8rem"
+                >
+                  CASETTE
+                </a>
+                <a
+                  class="btn btn-outline-dark rounded-5"
+                  style="font-family: Raleway, sans-serif; font-size: 0.8rem"
+                >
+                  FRAME
+                </a>
+              </div>
+              <div
+                class="d-flex justify-content-center gap-2 align-items-center"
+              >
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  class="btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="currentColor"
+                    class="bi bi-instagram"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="/pages/book-service.html"
+                  class="btn btn-dark px-4 py-2 mt-2 btn-style rounded-0 maxwel-book-btn"
+                  style="font-family: Raleway, sans-serif"
+                >
+                  BOOK NOW
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Team item -->
+          <div class="col-md-6 col-sm-12 mb-5">
+            <div
+              class="bg-white shadow-sm py-5 px-4 mx-5"
+              style="position: relative"
+            >
+              <img
+                src="/assets/experts/expert-4.jpg"
+                alt=""
+                width="120"
+                class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"
+                style="
+                  position: absolute;
+                  top: -28%;
+                  right: 50%;
+                  transform: translateX(50%);
+                "
+              />
+              <h5 class="mb-4 heading-tertiary" style="padding-top: 1rem">
+                OLIVER GRANT
+              </h5>
+
+              <div
+                class="d-flex gap-4 mb-4 justify-content-center align-items-center"
+              >
+                <a
+                  class="btn btn-outline-dark rounded-5"
+                  style="font-family: Raleway, sans-serif; font-size: 0.8rem"
+                >
+                  WHEELS
+                </a>
+                <a
+                  class="btn btn-outline-dark rounded-5 align-self-center"
+                  style="font-family: Raleway, sans-serif; font-size: 0.8rem"
+                >
+                  PEDALS & BRAKES
+                </a>
+              </div>
+              <div
+                class="d-flex justify-content-center gap-2 align-items-center"
+              >
+                <a href="https://www.instagram.com" target="_blank" class="btn">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="28"
+                    height="28"
+                    fill="currentColor"
+                    class="bi bi-instagram"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="/pages/book-service.html"
+                  class="btn btn-dark px-4 py-2 mt-2 btn-style rounded-0 oliver-book-btn"
+                  style="font-family: Raleway, sans-serif"
+                >
+                  BOOK NOW
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <div class="container-fluid bg-dark mt-5">
+      <footer class="container py-5">
+        <div class="row">
+          <a href="/index.html" class="col-12 col-md">
+            <img
+              src="/assets/logos/logo-transparent-png.png"
+              alt=""
+              height="100rem"
+            />
+          </a>
+          <div class="col-9 col-lg">
+            <p class="footer-address my-0">675 Nepean St. #37B</p>
+            <p class="footer-address my-0">Ottawa, ON, Canada</p>
+            <p class="footer-address">K2B XXX</p>
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="link-secondary text-decoration-none py-1"
+                  >(434)546-4356</a
+                >
+              </li>
+              <li>
+                <a class="link-secondary text-decoration-none py-1"
+                  >contact@pedalpro.com</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg justify-content-center">
+            <h5
+              style="font-family: Poppins, sans-serif; color: white"
+              class="mb-3"
+            >
+              HOURS
+            </h5>
+            <div class="d-flex align-items-center mb-2">
+              <h6 class="footer-address me-3 mb-1">MON-FRI</h6>
+              <p class="footer-address mb-1">8AM - 6PM</p>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <h6 class="footer-address me-3 mb-1">SAT</h6>
+              <p class="footer-address mb-1">11AM - 6PM</p>
+            </div>
+            <div class="d-flex align-items-center mb-2">
+              <h6 class="footer-address me-3 mb-1">SUN</h6>
+              <p class="footer-address mb-1">11AM - 6PM</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/book.js"></script>
+  </body>
+</html>

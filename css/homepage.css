@@ -1,0 +1,35 @@
+header {
+  color: #fff;
+  height: 90vh;
+  position: relative;
+  background-image: url("../assets/header-background.jpg");
+  background-size: cover; /*Figures out automatically the exact size needed*/
+  background-position: center;
+  padding-top: 32px;
+}
+
+.header-container {
+  width: 1200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-container-inner {
+  width: 60%;
+}
+
+.title {
+  font-family: "Kanit";
+  font-size: 5.2rem;
+  margin-bottom: 32px;
+  list-style: 1.05;
+}
+
+.slogan {
+  font-family: "Raleway";
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
