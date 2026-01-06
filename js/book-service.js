@@ -1,57 +1,153 @@
 "use strict";
 
-let name = localStorage.getItem("expertName");
-let services = localStorage.getItem("services").split(",");
-// console.log(name);
-// console.log(services);
+import { toast } from "./pp-core.js";
+import { readBooking, patchBooking } from "./booking-store.js";
 
-const expertName = document.querySelector(".expert-name");
-expertName.innerHTML = name;
+const SERVICE_META = {
+  WHEELS: { length: "45 minutes" },
+  "PEDALS & BRAKES": { length: "60 minutes" },
+  CASETTE: { length: "20 minutes" },
+  FRAME: { length: "20 minutes" },
+};
 
-const servicesNamesListed = document.querySelectorAll(".service-name");
-const servicesListed = document.querySelectorAll(".repair-item");
+function normalizeService(text) {
+  return String(text || "")
+    .replace(/&amp;/g, "&")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toUpperCase();
+}
 
-// console.log(servicesListed);
+function setContinueEnabled(enabled) {
+  const btn = document.getElementById("ppContinueBtn");
+  if (!btn) return;
 
-servicesListed.forEach((item) => {
-  // console.log(item.innerText.split("\n")[0]);
-  if (!services.includes(item.innerText.split("\n")[0])) {
-    item.classList.add("d-none");
+  if (enabled) {
+    btn.classList.remove("pp-disabled");
+    btn.setAttribute("aria-disabled", "false");
+  } else {
+    btn.classList.add("pp-disabled");
+    btn.setAttribute("aria-disabled", "true");
   }
-});
+}
 
-function respondToNext() {
-  let val;
-  const vals = document.querySelectorAll(".list-group-item-check");
-  vals.forEach((item) => {
-    if (item.checked) {
-      val = item.id;
+function setExpertName() {
+  const booking = readBooking();
+  const el = document.querySelector(".expert-name");
+  if (el) el.textContent = booking.expertName || "—";
+}
+
+function filterServicesForExpert() {
+  const booking = readBooking();
+  const allowed = new Set(
+    (booking.expertServices || []).map((s) => normalizeService(s))
+  );
+
+  if (!booking.expertName) {
+    toast({
+      title: "Select a specialist first",
+      message: "Please choose a specialist before selecting a service.",
+      timeout: 2400,
+    });
+    window.location.assign("book.html");
+    return;
+  }
+
+  if (!allowed.size) return;
+
+  document.querySelectorAll(".repair-item").forEach((label) => {
+    const nameEl = label.querySelector(".service-name");
+    const service = normalizeService(
+      nameEl?.innerHTML || nameEl?.textContent || ""
+    );
+
+    const inputId = label.getAttribute("for");
+    const input = inputId ? document.getElementById(inputId) : null;
+
+    if (!allowed.has(service)) {
+      label.classList.add("d-none");
+      if (input && input.checked) input.checked = false;
+    } else {
+      label.classList.remove("d-none");
     }
   });
 
-  const elementSelected = document.querySelector("label[for=" + val + "]");
-
-  const serviceSelected = elementSelected
-    .getElementsByClassName("service-name")[0]
-    .innerHTML.trim();
-  console.log(serviceSelected);
-
-  let service, length;
-
-  if (serviceSelected == "WHEELS") {
-    service = "WHEELS";
-    length = "45 minutes";
-  } else if (serviceSelected == "PEDALS &amp; BRAKES") {
-    service = "PEDALS & BRAKES";
-    length = "60 minutes";
-  } else if (serviceSelected == "CASETTE") {
-    service = "CASETTE";
-    length = "20 minutes";
-  } else if (serviceSelected == "FRAME") {
-    service = "FRAME";
-    length = "20 minutes";
-  }
-
-  localStorage.setItem("service", service);
-  localStorage.setItem("length", length);
+  // If after filtering nothing is checked, that's OK — user must choose.
 }
+
+function getSelectedService() {
+  const checked = document.querySelector(".list-group-item-check:checked");
+  if (!checked) return null;
+
+  const label = document.querySelector(`label[for="${checked.id}"]`);
+  if (!label || label.classList.contains("d-none")) return null;
+
+  const nameEl = label.querySelector(".service-name");
+  const service = normalizeService(
+    nameEl?.innerHTML || nameEl?.textContent || ""
+  );
+  return service || null;
+}
+
+(function init() {
+  setExpertName();
+  filterServicesForExpert();
+
+  // Start disabled until user picks something
+  setContinueEnabled(false);
+
+  // When user selects a service, save it immediately and enable continue
+  document.addEventListener("change", (e) => {
+    if (!e.target?.classList?.contains("list-group-item-check")) return;
+
+    const service = getSelectedService();
+    if (!service || !SERVICE_META[service]) {
+      setContinueEnabled(false);
+      return;
+    }
+
+    patchBooking({ service, length: SERVICE_META[service].length });
+    setContinueEnabled(true);
+
+    toast({
+      title: "Service selected",
+      message: `${service} • ${SERVICE_META[service].length}`,
+      timeout: 1200,
+    });
+  });
+
+  // Block continue click if disabled (bulletproof)
+  const btn = document.getElementById("ppContinueBtn");
+  if (btn) {
+    btn.addEventListener("click", (e) => {
+      const disabled =
+        btn.classList.contains("pp-disabled") ||
+        btn.getAttribute("aria-disabled") === "true";
+
+      if (disabled) {
+        e.preventDefault();
+        toast({
+          title: "Pick a service",
+          message: "Select one service to continue.",
+          timeout: 2200,
+        });
+        return;
+      }
+
+      // Ensure saved (in case user somehow skipped change event)
+      const service = getSelectedService();
+      if (!service || !SERVICE_META[service]) {
+        e.preventDefault();
+        setContinueEnabled(false);
+        toast({
+          title: "Pick a service",
+          message: "Select one service to continue.",
+          timeout: 2200,
+        });
+        return;
+      }
+
+      patchBooking({ service, length: SERVICE_META[service].length });
+    });
+  }
+})();

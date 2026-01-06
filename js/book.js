@@ -1,5 +1,8 @@
 "use strict";
 
+import { toast } from "./pp-core.js";
+import { patchBooking, resetBooking } from "./booking-store.js";
+
 const experts = {
   expert1: {
     expertName: "Ethan Carter",
@@ -19,29 +22,31 @@ const experts = {
   },
 };
 
-const ethanBtn = document.querySelector(".ethan-book-btn");
-const liamBtn = document.querySelector(".liam-book-btn");
-const maxwelBtn = document.querySelector(".maxwel-book-btn");
-const oliverBtn = document.querySelector(".oliver-book-btn");
-const expertName = document.querySelector(".expert-name");
-let expertSelected;
+function wire(btnSelector, expert) {
+  const btn = document.querySelector(btnSelector);
+  if (!btn) return;
 
-ethanBtn.addEventListener("click", (e) => {
-  localStorage.setItem("expertName", experts.expert1.expertName);
-  localStorage.setItem("services", experts.expert1.services);
-});
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
 
-liamBtn.addEventListener("click", (e) => {
-  localStorage.setItem("expertName", experts.expert2.expertName);
-  localStorage.setItem("services", experts.expert2.services);
-});
+    resetBooking();
+    patchBooking({
+      expertName: expert.expertName,
+      expertServices: expert.services,
+    });
 
-maxwelBtn.addEventListener("click", (e) => {
-  localStorage.setItem("expertName", experts.expert3.expertName);
-  localStorage.setItem("services", experts.expert3.services);
-});
+    toast({
+      title: "Expert Selected",
+      message: `${expert.expertName} is ready. Choose your service next.`,
+      timeout: 1400,
+    });
 
-oliverBtn.addEventListener("click", (e) => {
-  localStorage.setItem("expertName", experts.expert4.expertName);
-  localStorage.setItem("services", experts.expert4.services);
-});
+    const href = btn.getAttribute("href") || "book-service.html";
+    window.location.assign(href);
+  });
+}
+
+wire(".ethan-book-btn", experts.expert1);
+wire(".liam-book-btn", experts.expert2);
+wire(".maxwel-book-btn", experts.expert3);
+wire(".oliver-book-btn", experts.expert4);
