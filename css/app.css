@@ -8,6 +8,8 @@
    ========================================================================== */
 
 :root {
+  --pp-scale: 0.85;
+
   --pp-accent: #f38c4c;
   --pp-accent2: #ffb07a;
 
@@ -50,6 +52,9 @@
 }
 html {
   scroll-behavior: smooth;
+  /* Keeps everything stable across browsers */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* ✅ Footer fix: page layout */
@@ -76,6 +81,7 @@ body {
     linear-gradient(180deg, var(--pp-bg), var(--pp-bg2));
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-size: calc(16px * var(--pp-scale));
 }
 
 main {
@@ -381,7 +387,7 @@ a {
     ),
     rgba(255, 255, 255, 0.065);
   box-shadow: var(--pp-shadow-sm);
-  padding: 18px;
+  padding: 28px;
   overflow: hidden;
   transition: transform var(--pp-med) var(--pp-ease),
     box-shadow var(--pp-med) var(--pp-ease),
@@ -717,4 +723,35 @@ a.pp-disabled {
   pointer-events: none;
   opacity: 0.55;
   filter: grayscale(0.1);
+}
+
+/* ================================
+   80% VIBE LOOK
+   ================================ */
+
+/* Scale headings slightly down (this is what makes it feel like 80% zoom) */
+.pp-h1 {
+  font-size: calc(clamp(2.2rem, 3.6vw, 4rem) * var(--pp-scale));
+}
+.pp-lead {
+  font-size: calc(1.05rem * var(--pp-scale));
+}
+
+/* Reduce “breathing room” a bit so layout matches the 80% vibe */
+.pp-section {
+  padding-top: calc(72px * var(--pp-scale));
+  padding-bottom: calc(72px * var(--pp-scale));
+}
+
+/* Cards/panels scale: keeps everything consistent */
+.pp-card,
+.pp-panel {
+  border-radius: calc(28px * var(--pp-scale));
+}
+
+/* Buttons: slightly smaller, still premium */
+.pp-btn,
+.pp-cta {
+  padding: calc(12px * var(--pp-scale)) calc(18px * var(--pp-scale));
+  font-size: calc(0.95rem * var(--pp-scale));
 }
